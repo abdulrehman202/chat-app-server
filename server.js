@@ -5,7 +5,7 @@ const io = require("socket.io")(httpServer, options);
 io.on("connection", socket => { 
     
     socket.on('message',(msg)=>{
-        socket.emit('message', msg);
+        io.sockets.emit('message', msg);
     });
 });
 
